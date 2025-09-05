@@ -6,11 +6,18 @@ namespace pryBazanContacto
         {
             InitializeComponent();
         }
-        string vContacto= "";
-        string vTelefono= "";
+        string vContacto = "";
+        string vTelefono = "";
         private void btnGrabar_Click(object sender, EventArgs e)
         {
+            vContacto = txtContacto.Text;
+            vTelefono = txtTelefono.Text;   
             lstResultado.Items.Add(vContacto + " - " + vTelefono);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

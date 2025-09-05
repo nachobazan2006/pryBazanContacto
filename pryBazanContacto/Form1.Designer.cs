@@ -30,8 +30,8 @@
         {
             lblContacto = new Label();
             lblTelefono = new Label();
-            textBox1 = new TextBox();
-            maskedTextBox1 = new MaskedTextBox();
+            txtContacto = new TextBox();
+            txtTelefono = new MaskedTextBox();
             lstResultado = new ListBox();
             btnGrabar = new Button();
             SuspendLayout();
@@ -54,19 +54,20 @@
             lblTelefono.TabIndex = 1;
             lblTelefono.Text = "Telefono";
             // 
-            // textBox1
+            // txtContacto
             // 
-            textBox1.Location = new Point(265, 84);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 2;
+            txtContacto.Location = new Point(265, 84);
+            txtContacto.Name = "txtContacto";
+            txtContacto.Size = new Size(100, 23);
+            txtContacto.TabIndex = 2;
+            txtContacto.TextChanged += textBox1_TextChanged;
             // 
-            // maskedTextBox1
+            // txtTelefono
             // 
-            maskedTextBox1.Location = new Point(265, 139);
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(100, 23);
-            maskedTextBox1.TabIndex = 3;
+            txtTelefono.Location = new Point(265, 139);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(100, 23);
+            txtTelefono.TabIndex = 3;
             // 
             // lstResultado
             // 
@@ -94,8 +95,8 @@
             ClientSize = new Size(500, 444);
             Controls.Add(btnGrabar);
             Controls.Add(lstResultado);
-            Controls.Add(maskedTextBox1);
-            Controls.Add(textBox1);
+            Controls.Add(txtTelefono);
+            Controls.Add(txtContacto);
             Controls.Add(lblTelefono);
             Controls.Add(lblContacto);
             Name = "Form1";
@@ -108,8 +109,8 @@
 
         private Label lblContacto;
         private Label lblTelefono;
-        private TextBox textBox1;
-        private MaskedTextBox maskedTextBox1;
+        private TextBox txtContacto;
+        private MaskedTextBox txtTelefono;
         private ListBox lstResultado;
         private Button btnGrabar;
     }
