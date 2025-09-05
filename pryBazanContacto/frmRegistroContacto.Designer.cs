@@ -78,7 +78,7 @@
             lstResultado.ItemHeight = 15;
             lstResultado.Location = new Point(29, 254);
             lstResultado.Name = "lstResultado";
-            lstResultado.Size = new Size(120, 94);
+            lstResultado.Size = new Size(220, 94);
             lstResultado.TabIndex = 4;
             // 
             // btnGrabar
@@ -108,7 +108,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PeachPuff;
-            ClientSize = new Size(500, 444);
+            ClientSize = new Size(309, 378);
             Controls.Add(label1);
             Controls.Add(btnGrabar);
             Controls.Add(lstResultado);
