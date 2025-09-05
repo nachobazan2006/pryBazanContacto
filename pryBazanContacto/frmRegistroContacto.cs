@@ -1,8 +1,8 @@
 namespace pryBazanContacto
 {
-    public partial class Form1 : Form
+    public partial class frmRegistroContacto : Form
     {
-        public Form1()
+        public frmRegistroContacto()
         {
             InitializeComponent();
         }
