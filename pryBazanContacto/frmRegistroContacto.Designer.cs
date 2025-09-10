@@ -117,7 +117,9 @@
             Controls.Add(lblTelefono);
             Controls.Add(lblContacto);
             Name = "frmRegistroContacto";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += frmRegistroContacto_Load;
             ResumeLayout(false);
             PerformLayout();
         }
