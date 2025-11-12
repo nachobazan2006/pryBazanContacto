@@ -20,21 +20,50 @@ namespace pryBazanContacto
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (txtTelefono.Text != "") ;
-            btnGrabar.Enabled = true;
+
+            string contacto = txtContacto.Text;
+            string telefono = txtTelefono.Text;
+
+            
+            if (string.IsNullOrWhiteSpace(contacto) || string.IsNullOrWhiteSpace(telefono))
+            {
+                MessageBox.Show("Debe ingresar un contacto y un telefono");
+                btnGrabar.Enabled = false;
+                return;
+            }
+
+            // Verificar si el contacto ya existe en el vector (ignorando mayúsculas/minúsculas)
+            for (int i = 0; i < vecContacto.Length; i++)
+            {
+                if (!string.IsNullOrEmpty(vecContacto[i]) && vecContacto[i] == contacto)
+                {
+                    MessageBox.Show("El contacto ya existe");
+                    
+                    return;
+                }
+            }
+
+            // Verificar espacio en los vectores
+            if (indice >= vecContacto.Length)
+            {
+                MessageBox.Show("No se pueden agregar más contactos (vector lleno)");
+                btnGrabar.Enabled = false;
+                return;
+            }
+
+            // Agregar nuevo contacto
             vContador++;
-            vContacto = txtContacto.Text;
-            vTelefono = txtTelefono.Text;
+            vContacto = contacto;
+            vTelefono = telefono;
             string vResultado = vContador + " - " + vContacto + " - " + vTelefono;
             lstResultado.Items.Add(vResultado);
 
-            //Declaracion de vectores
+            // Guardar en vectores
             vecContacto[indice] = vContacto;
             vecTelefono[indice] = vTelefono;
-
             indice++;
 
-
+            btnGrabar.Enabled = true;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
